@@ -1,0 +1,26 @@
+name: CI
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@4
+            - name: Run a one-line script
+              run: echo Hello, World
+            - name: Run a multi-line script
+              run: |
+                echo Add other actions to build,
+                echo tes, and deploy your project.
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Check Uptime
+          run: uptime
+        - name: CPU info
+          run: nproc
+        - name: Kernel info
+          run: uname -r
